@@ -1,0 +1,11 @@
+on:
+  workflow_dispatch:
+name: Testground Interop Tests
+
+jobs:
+  test-interop:
+    uses: laurentsenta/test-plans/.github/workflows/test-compatibility.yml@compatibility-and-reusable
+    with:
+      testplan: "c"
+      rust-ref: "a"
+      go-ref: "b"
