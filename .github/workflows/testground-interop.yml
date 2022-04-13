@@ -12,17 +12,17 @@ on:
 name: Testground Interop Tests
 
 jobs:
-  test-interop:
-    uses: laurentsenta/test-plans/.github/workflows/test-compatibility.yml@compatibility-and-reusable
-    with:
-      testplan: "compatibility"
-      testcase: "tcp-connect"
-      rust-ref: "a1f3547b43bfac17ef50248e4a8ce1523d3aaa76"
-      go-ref: "e8a2c74b83aee579d52179d4ffb5e94b1d207a77"
-  # test-interop-manual:
+  # test-interop:
   #   uses: laurentsenta/test-plans/.github/workflows/test-compatibility.yml@compatibility-and-reusable
   #   with:
   #     testplan: "compatibility"
   #     testcase: "tcp-connect"
-  #     rust-ref: ${{ github.event.inputs.rustref }}
-  #     go-ref: ${{ github.event.inputs.goref }}
+  #     rust-ref: "a1f3547b43bfac17ef50248e4a8ce1523d3aaa76"
+  #     go-ref: "e8a2c74b83aee579d52179d4ffb5e94b1d207a77"
+  test-interop-manual:
+    uses: laurentsenta/test-plans/.github/workflows/test-compatibility.yml@compatibility-and-reusable
+    with:
+      testplan: "compatibility"
+      testcase: "tcp-connect"
+      rust-ref: ${{ github.event.inputs.rustref }}
+      go-ref: ${{ github.event.inputs.goref }}
