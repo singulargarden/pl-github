@@ -7,5 +7,6 @@ jobs:
     uses: laurentsenta/test-plans/.github/workflows/test-compatibility.yml@compatibility-and-reusable
     with:
       testplan: "c"
+      testcase: "x"
       rust-ref: "a"
       go-ref: "b"
