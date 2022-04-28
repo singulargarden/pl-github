@@ -27,7 +27,7 @@ jobs:
   #     rust-ref: ${{ github.event.inputs.rustref }}
   #     go-ref: ${{ github.event.inputs.goref }}
   test-libp2p:
-    uses: laurentsenta/test-plans/.github/workflows/test-compatibility.yml@feat/ping-interop-explo
+    uses: "laurentsenta/test-plans/.github/workflows/test-compatibility.yml@feat/ping-interop" #-explo
     with:
       testsuite: "ping-interop"
       testplan_a: "go-v0.19"
