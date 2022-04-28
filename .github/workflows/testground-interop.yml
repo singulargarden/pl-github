@@ -35,4 +35,4 @@ jobs:
       testplan_b: "go-v0.19"
       version_b: "master"
       testcase: "ping"
-      testground_endpoint: "https://e77a-2a01-4f9-2b-1c96-00-2.eu.ngrok.io"
+      testground_endpoint: "http://staging.ipdx.testground.ipfs.team"
