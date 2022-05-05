@@ -1,0 +1,48 @@
+on:
+  workflow_dispatch:
+    inputs:
+      rustref:
+        type: string
+        required: false
+        description: rust ref
+      goref:
+        type: string
+        required: false
+        description: go ref
+name: EXPLO - Testground Interop Tests
+
+jobs:
+  # test-interop:
+  #   uses: laurentsenta/test-plans/.github/workflows/test-compatibility.yml@compatibility-and-reusable
+  #   with:
+  #     testplan: "compatibility"
+  #     testcase: "tcp-connect"
+  #     rust-ref: "a1f3547b43bfac17ef50248e4a8ce1523d3aaa76"
+  #     go-ref: "e8a2c74b83aee579d52179d4ffb5e94b1d207a77"
+  # test-interop-manual:
+  #   uses: laurentsenta/test-plans/.github/workflows/test-compatibility.yml@compatibility-and-reusable
+  #   with:
+  #     testplan: "compatibility"
+  #     testcase: "tcp-connect"
+  #     rust-ref: ${{ github.event.inputs.rustref }}
+  #     go-ref: ${{ github.event.inputs.goref }}
+  test-libp2p-master:
+    uses: "laurentsenta/test-plans/.github/workflows/test-compatibility.yml@feat/ping-interop-explo"
+    with:
+      testsuite: "ping-interop"
+      testplan_a: "go-v0.19"
+      version_a: "v0.19.0"
+      testplan_b: "go-v0.19"
+      version_b: "master"
+      testcase: "ping"
+      testground_endpoint: "http://staging.ipdx.testground.ipfs.team"
+  test-libp2p-master-011:
+    uses: "laurentsenta/test-plans/.github/workflows/test-compatibility.yml@feat/ping-interop-explo"
+    with:
+      testsuite: "ping-interop"
+      testplan_a: "go-v0.19"
+      version_a: "master"
+      testplan_b: "go-v0.11"
+      version_b: "v0.11"
+      testcase: "ping"
+      testground_endpoint: "http://staging.ipdx.testground.ipfs.team"
