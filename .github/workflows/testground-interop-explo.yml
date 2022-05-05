@@ -1,16 +1,6 @@
 on:
   workflow_dispatch:
-    inputs:
-      rustref:
-        type: string
-        required: false
-        description: rust ref
-      goref:
-        type: string
-        required: false
-        description: go ref
 name: EXPLO - Testground Interop Tests
-
 jobs:
   # test-interop:
   #   uses: laurentsenta/test-plans/.github/workflows/test-compatibility.yml@compatibility-and-reusable
