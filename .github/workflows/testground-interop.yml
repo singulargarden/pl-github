@@ -26,14 +26,14 @@ jobs:
   #     testcase: "tcp-connect"
   #     rust-ref: ${{ github.event.inputs.rustref }}
   #     go-ref: ${{ github.event.inputs.goref }}
-  test-libp2p-master:
-    uses: "singulargarden/test-plans/.github/workflows/test-compatibility.yml@feat/ping-interop-2" #-explo
-    with:
-      composition_file: "ping-interop/_compositions/go-cross-versions.toml"
-      custom_git_reference: "master"
-      testground_endpoint: "http://staging.ipdx.testground.ipfs.team"
+  # test-libp2p-master:
+  #   uses: "singulargarden/test-plans/.github/workflows/test-compatibility.yml@feat/ping-interop-2" #-explo
+  #   with:
+  #     composition_file: "ping-interop/_compositions/go-cross-versions.toml"
+  #     custom_git_reference: "master"
+  #     testground_endpoint: "http://staging.ipdx.testground.ipfs.team"
   test-libp2p-master-local:
-    uses: "singulargarden/test-plans/.github/workflows/test-compatibility.yml@feat/ping-interop-2" #-explo
+    uses: "singulargarden/test-plans/.github/workflows/test-compatibility.yml@feat/ping-interop-2"
     with:
       composition_file: "ping-interop/_compositions/go-cross-versions.toml"
       custom_git_reference: "master"
