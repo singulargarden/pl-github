@@ -34,7 +34,7 @@ jobs:
   #     testground_endpoint: "http://staging.ipdx.testground.ipfs.team"
   test-libp2p-master-local:
     # uses: "singulargarden/test-plans/.github/workflows/test-compatibility.yml@feat/ping-interop"
-    uses: "laurentsenta/test-plans/.github/workflows/test-compatibility.yml@feat/ping-interop-2"
+    uses: "singulargarden/test-plans/.github/workflows/test-compatibility.yml@feat/ping-interop-2"
     with:
       composition_file: "ping-interop/_compositions/go-cross-versions.toml"
       custom_git_reference: "master"
