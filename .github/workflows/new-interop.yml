@@ -1,0 +1,16 @@
+on:
+  workflow_dispatch:
+    inputs:
+      goref:
+        type: string
+        required: false
+        description: go ref
+name: Testground Interop Tests
+
+jobs:
+  test-libp2p-master:
+    uses: "singulargarden/test-plans/.github/workflows/test-compatibility.yml"
+    with:
+      composition_file: "ping-interop/_compositions/go-cross-versions.toml"
+      custom_git_reference: "master"
+      testground_endpoint: "http://staging.ipdx.testground.ipfs.team"
