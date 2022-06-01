@@ -27,7 +27,7 @@ jobs:
   #     rust-ref: ${{ github.event.inputs.rustref }}
   #     go-ref: ${{ github.event.inputs.goref }}
   # test-libp2p-master:
-  #   uses: "singulargarden/test-plans/.github/workflows/test-compatibility.yml@feat/ping-interop" #-explo
+  #   uses: "laurentsenta/test-plans/.github/workflows/test-compatibility.yml@feat/ping-interop" #-explo
   #   with:
   #     composition_file: "ping-interop/_compositions/go-cross-versions.toml"
   #     custom_git_reference: "master"
