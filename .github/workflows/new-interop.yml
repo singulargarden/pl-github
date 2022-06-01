@@ -9,7 +9,7 @@ name: Testground Interop Tests
 
 jobs:
   test-libp2p-master:
-    uses: "singulargarden/test-plans/.github/workflows/test-compatibility.yml"
+    uses: singulargarden/test-plans/.github/workflows/test-compatibility.yml@master
     with:
       composition_file: "ping-interop/_compositions/go-cross-versions.toml"
       custom_git_reference: "master"
