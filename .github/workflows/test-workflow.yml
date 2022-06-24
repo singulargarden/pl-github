@@ -1,5 +1,7 @@
 on: [push, pull_request]
 name: Test refs!
+# echo all ${{ github.event.pull_request }}
+# echo "${{ toJSON(github.event.pull_request) }}"
 
 jobs:
   run_test:
@@ -25,10 +27,6 @@ jobs:
           echo github.event.pull_request.repo.git_url ${{ github.event.pull_request.head.repo.git_url }}
           echo url == github.com/${{ github.event.pull_request.head.repo.full_name }}@${{ github.event.pull_request.head.sha }} 
           echo github.event.pull_request.merge_commit_sha ${{ github.event.pull_request.merge_commit_sha }}
-
-
-          # echo all ${{ github.event.pull_request }}
-          # echo "${{ toJSON(github.event.pull_request) }}"
           git clone https://github.com/${{ github.repository }} my-repo
           cd my-repo
           git fetch --all
