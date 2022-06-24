@@ -15,6 +15,7 @@ jobs:
           echo github.ref: ${{ github.ref }}
           echo github.event.pull_request.head.sha: ${{ github.event.pull_request.head.sha }}
           echo github.event.pull_request.head.repo.name: ${{ github.event.pull_request.head.repo.name }}
+          echo url = github.com/${{ github.event.pull_request.head.repo.full_name }}@${{ github.event.pull_request.head.sha }}
 
 # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull-request-events-for-forked-repositories
 # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request
