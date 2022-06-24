@@ -17,6 +17,10 @@ jobs:
           echo github.ref_name ${{ github.ref_name }}
           echo github.sha ${{ github.sha }}
           echo github.repository ${{ github.repository }}
+          echo github.event.pull_request.head.sha ${{ github.event.pull_request.head.sha }}
+          echo github.event.pull_request.head.ref ${{ github.event.pull_request.head.ref }}
+          echo github.event.pull_request.repo.name ${{ github.event.pull_request.repo.name }}
+          echo github.event.pull_request.repo.git_url ${{ github.event.pull_request.repo.git_url }}
           git clone https://github.com/${{ github.repository }} my-repo
           cd my-repo
           git fetch --all
