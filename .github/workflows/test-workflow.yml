@@ -8,6 +8,8 @@ jobs:
       - name: show the refs
         shell: bash
         run: |
+          # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request
+          # https://docs.github.com/en/rest/pulls/pulls#get-a-pull-request
           echo the branch I care about is: ${{ github.head_ref || github.ref_name }}
           # The head_ref or source branch of the pull request in a workflow run. This property is only available when the event that triggers a workflow run is either pull_request or pull_request_target.
           echo github.head_ref ${{ github.head_ref }}
@@ -21,7 +23,8 @@ jobs:
           echo github.event.pull_request.head.ref ${{ github.event.pull_request.head.ref }}
           echo github.event.pull_request.repo.name ${{ github.event.pull_request.head.repo.name }}
           echo github.event.pull_request.repo.git_url ${{ github.event.pull_request.head.repo.git_url }}
-          echo url == github.com/${{ github.event.pull_request.head.repo.full_name }}@${{ github.event.pull_request.head.sha }}
+          echo url == github.com/${{ github.event.pull_request.head.repo.full_name }}@${{ github.event.pull_request.head.sha }} 
+          echo github.event.pull_request.merge_commit_sha ${{ github.event.pull_request.merge_commit_sha }}
           echo all ${{ github.event.pull_request }}
           echo all ${{ toJSON(github.event.pull_request) }}
           git clone https://github.com/${{ github.repository }} my-repo
