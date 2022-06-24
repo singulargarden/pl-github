@@ -13,7 +13,7 @@ name: Testground Demo Go Interop Tests
 
 jobs:
   run-libp2p-test-plans:
-    uses: "singulargarden/test-plans/.github/workflows/test-compatibility.yml@master"
+    uses: "singulargarden/test-plans/.github/workflows/run-composition.yml@master"
     with:
       composition_file: "ping/_compositions/go-cross-versions.toml"
       custom_git_reference: ${{ github.event.inputs.custom_git_reference }}
