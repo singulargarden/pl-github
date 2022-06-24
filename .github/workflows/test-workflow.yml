@@ -30,4 +30,4 @@ jobs:
           git clone https://github.com/${{ github.repository }} my-repo
           cd my-repo
           git fetch --all
-          git show ${{ github.event.pull_request.merge_commit_sha }}
+          git show ${{ github.sha }}
