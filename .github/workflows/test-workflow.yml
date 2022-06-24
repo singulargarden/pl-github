@@ -9,7 +9,10 @@ jobs:
         shell: bash
         run: |
           echo the branch I care about is: ${{ github.head_ref || github.ref_name }}
+          # The head_ref or source branch of the pull request in a workflow run. This property is only available when the event that triggers a workflow run is either pull_request or pull_request_target.
           echo github.head_ref ${{ github.head_ref }}
+          # The base_ref or target branch of the pull request in a workflow run. This property is only available when the event that triggers a workflow run is either pull_request or pull_request_target.
+          echo github.base_ref ${{ github.base_ref }}
           echo github.ref ${{ github.ref }}
           echo github.ref_name ${{ github.ref_name }}
           echo github.sha ${{ github.sha }}
