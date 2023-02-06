@@ -16,12 +16,12 @@ jobs:
           echo "This is step 2"
 
       - name: Step 3
-        if: always()
+        # if: always()
         run: |
           echo "This is step 3"
 
       - name: Step 4
-        if: always()
+        if: success() || failure() # better than always(), because it doesn't absorb canceled events.
         run: |
           echo "This is step 4"
           exit 0
