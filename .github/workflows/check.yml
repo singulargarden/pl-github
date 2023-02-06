@@ -1,0 +1,27 @@
+name: Example Workflow
+on: push
+
+jobs:
+  check_fail:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: |
+          echo "This is step 1"
+          exit 1
+
+      - name: Step 2
+        if: always()
+        run: |
+          echo "This is step 2"
+
+      - name: Step 3
+        if: always()
+        run: |
+          echo "This is step 3"
+
+      - name: Step 4
+        if: always()
+        run: |
+          echo "This is step 4"
+          exit 0
