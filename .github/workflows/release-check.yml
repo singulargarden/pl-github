@@ -1,0 +1,11 @@
+# debugging issue with https://github.com/ipld/go-ipld-prime/blob/master/.github/workflows/release-check.yml
+# https://github.com/ipld/go-ipld-prime/actions/runs/4148548218
+
+name: Release Checker
+on:
+  pull_request:
+    paths: [ 'version.json' ]
+
+jobs:
+  release-check:
+    uses: protocol/.github/.github/workflows/release-check.yml@master
